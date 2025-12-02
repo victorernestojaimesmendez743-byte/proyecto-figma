@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Game Memorizer </title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- PANTALLA 1 - WELCOME -->
+  <section id="welcomeScreen" class="screen" style="display:none;">
+    <div class="panel">
+      <img src="img/imagen7.jpg" alt="fondo" class="bg-full">
+      <div class="center-card">
+        <h1 class="game-title">GAME MEMORIZE</h1>
+        <button id="goLoginBtn" class="btn big">Iniciar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANTALLA 2 - LOGIN -->
+  <section id="loginScreen" class="screen">
+    <div class="login-card">
+      <div class="login-header">
+        <img src="img/imagen 7.jpg" alt="header">
+      </div>
+
+      <div class="login-box">
+        <h2>Inicio de sesión</h2>
+        <p>Iniciar sesión con tu cuenta</p>
+
+        <label for="loginEmail">EMAIL</label>
+        <input id="loginEmail" type="text" placeholder="victorjaimes@gmail.com" />
+
+        <label for="loginPass">PASSWORD</label>
+        <input id="loginPass" type="password" placeholder="Introduce tu contraseña" />
+
+        <div class="row">
+          <button type="button" id="btnlogin" class="btn">Iniciar sesión</button>
+          <button type="button" id="toRegister" class="btn alt">Registrarse</button>
+        </div>
+
+        <p id="loginMsg" class="msg"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANTALLA 3 - REGISTER -->
+  <section id="registerScreen" class="screen" style="display:none;">
+    <div class="register-card">
+      <div class="register-header">
+        <img src="img/imagen registro.jpg" alt="register">
+      </div>
+      <div class="register-box">
+        <h2>Regístrate</h2>
+
+        <label for="regEmail">EMAIL</label>
+        <input id="regEmail" type="text" placeholder="tu@gmail.com">
+
+        <label for="regUser">USUARIO</label>
+        <input id="regUser" type="text" placeholder="Elige tu usuario">
+
+        <label for="regPass">CONTRASEÑA</label>
+        <input id="regPass" type="password" placeholder="Elige una contraseña">
+
+        <button id="btnRegister" class="btn">Registrarse</button>
+        <p id="registerMsg" class="msg"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANTALLA 4 - CONFIRMACION / FELICITACIONES -->
+  <section id="congratsScreen" class="screen" style="display:none;">
+    <div class="panel">
+      <img src="img/imagen registro con exito.jpg" class="persona" alt="gato">
+      <div class="speech">
+        <h2>¡Felicitaciones!</h2>
+        <p>Te has inscrito con éxito. Continúa la aventura.</p>
+        <button id="btnContinue" class="btn">Continuar</button>
+      </div>
+    </div>
+  </section>
+  <!-- PANTALLA 5 - PANTALLA PRINCIPAL -->
+<section id="mainScreen" class="screen" style="display:none;">
+  <div class="panel">
+
+    <!-- FONDO IMAGEN -->
+    <img src="img/imagen pantalla principal.jpg" class="bg-full" alt="fondo">
+    <audio id="musicMain" src="audio/Scorponok - Steve Jablonsky.mp3" loop></audio>
+
+    <!-- BOTÓN PLAY ARRIBA A LA DERECHA -->
+    <button id="btnPlay" class="play-btn-top">PLAY</button>
+
+  </div>
+</section>
+
+  <!-- PANTALLA 6 - MENU PRINCIPAL -->
+  <section id="menuScreen" class="screen" style="display:none;">
+    <div class="panel menu-panel">
+      <img src="img/imagen menu.jpg" class="bg-full" alt="menu">
+      <div class="menu-buttons">
+        <audio id="musicMenu" src="audio/Scorponok - Steve Jablonsky.mp3" loop></audio>
+        <button id="btnMultiplayer" class="btn big red">MULTIJUGADOR</button>
+        <button id="btnLevels" class="btn big red">NIVELES</button>
+        <button id="btnSettings" class="btn big red">AJUSTES</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANTALLA 7 - NIVELES -->
+  <section id="levelsScreen" class="screen" style="display:none;">
+    <div class="panel levels-panel">
+      <audio id="musicLevels" src="audio/intro-niveles.mp3" loop></audio>
+      <img src="img/imagen menu.jpg"class="bg-full"alt="niveles">
+      <div class="levels-grid">
+        <button class="level btn small" data-level="1">01</button>
+        <button class="level btn small" data-level="2">02</button>
+        <button class="level btn small" data-level="3">03</button>
+        <button class="level btn small" data-level="4">04</button>
+        <button class="level btn small" data-level="5">05</button>
+      </div>
+      <div class="back-row">
+        <button class="btn alt" id="backFromLevels">Volver</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANTALLA 8 - AJUSTES -->
+  <section id="settingsScreen" class="screen" style="display:none;">
+    <div class="panel settings-panel">
+      <img src="img/imagen ajustes.jpg" class="bg-full" alt="ajustes">
+      <div class="settings-box">
+        <h2>Ajustes</h2>
+        <div class="setting-item"><img src="img/icon-idioma.png" class="icon">Idioma: <select id="selLang"><option>ES</option><option>EN</option></select></div>
+        <div class="setting-item"><img src="img/icon-sonido.png" class="icon">Sonido: <input type="checkbox" id="toggleSound" checked></div>
+        <div class="setting-item"><img src="img/icon-musica.png" class="icon">Música: <input type="checkbox" id="toggleMusic" checked></div>
+        <div class="setting-item"><img src="img/icon-soporte.png" class="icon">Soporte: <button id="btnSupport" class="btn small">Contactar</button></div>
+        <div class="back-row"><button class="btn alt" id="backFromSettings">Volver</button></div>
+      </div>
+    </div>
+  </section>
+
+<!-- PANTALLA 9 - MULTIJUGADOR -->
+<section id="multiplayerScreen" class="screen" style="display:none;">
+  <div class="panel multiplayer-panel">
+    <audio id="musicLevels" src="audio" loop></audio>
+    <img src="img/imagen multijugador.jpg" class="bg-full" alt="multiplayer">
+
+    <div class="multibox">
+
+      <h2>Multijugador</h2>
+      <p>Selecciona un modo:</p>
+
+      <div class="multi-buttons">
+        <button id="btnMultiLocal" class="btn big red">2 Jugadores </button>
+        <button id="btnMultiOnline" class="btn big alt">Online (próximamente)</button>
+      </div>
+
+      <h3>Datos de Jugadores</h3>
+      <input type="text" id="p1Name" placeholder="Nombre Jugador 1">
+      <input type="text" id="p2Name" placeholder="Nombre Jugador 2">
+
+      <button id="btnStartLocal" class="btn big">Iniciar Partida</button>
+      
+      <div class="back-row">
+        <button class="btn alt" id="backFromMulti">Volver</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- PANTALLA 10 - JUEGO memorizer -->
+  <section id="gameScreen" class="screen" style="display:none;">
+    <div class="game-header">
+      <button id="btnToMenu" class="btn alt">Menu</button>
+      <h2>Juego de Memoria</h2>
+      <div id="score">Pares encontrados: <span id="pairsFound">0</span>/6</div>
+    </div>
+
+    <div class="board" id="board"></div>
+
+    <div class="game-footer">
+      <button id="resetBtn" class="btn">Reiniciar</button>
+    </div>
+  </section>
+  
+
+  <!-- VICTORY SCREEN (se muestra cuando se completan pares) -->
+  <section id="victoryScreen" class="screen" style="display:none;">
+    <div class="panel victory-panel">
+      <img src="img/imagen felicidades.jpg" class="bg-full" alt="victoria">
+      <h2>¡Ganaste!</h2>
+      <p>Has encontrado todas las parejas.</p>
+      <button id="btnVictoryContinue" class="btn">Continuar</button>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
