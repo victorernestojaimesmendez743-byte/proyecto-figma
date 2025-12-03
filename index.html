@@ -133,19 +133,18 @@
       <img src="img/imagen ajustes.jpg" class="bg-full" alt="ajustes">
       <div class="settings-box">
         <h2>Ajustes</h2>
-        <div class="setting-item"><img src="img/icon-idioma.png" class="icon">Idioma: <select id="selLang"><option>ES</option><option>EN</option></select></div>
-        <div class="setting-item"><img src="img/icon-sonido.png" class="icon">Sonido: <input type="checkbox" id="toggleSound" checked></div>
-        <div class="setting-item"><img src="img/icon-musica.png" class="icon">Música: <input type="checkbox" id="toggleMusic" checked></div>
-        <div class="setting-item"><img src="img/icon-soporte.png" class="icon">Soporte: <button id="btnSupport" class="btn small">Contactar</button></div>
+        <div class="setting-item" class="icon">Idioma: <select id="selLang"><option>ES</option><option>EN</option></select></div>
+        <div class="setting-item" class="icon">Sonido: <input type="checkbox" id="toggleSound" checked></div>
+        <div class="setting-item" class="icon">Música: <input type="checkbox" id="toggleMusic" checked></div>
+        <div class="setting-item" class="icon">Soporte: <button id="btnSupport" class="btn small">Contactar</button></div>
         <div class="back-row"><button class="btn alt" id="backFromSettings">Volver</button></div>
       </div>
     </div>
   </section>
-
 <!-- PANTALLA 9 - MULTIJUGADOR -->
 <section id="multiplayerScreen" class="screen" style="display:none;">
   <div class="panel multiplayer-panel">
-    <audio id="musicLevels" src="audio" loop></audio>
+    <audio id="musicLevels" src="audio/Linkin Park.mp3" loop></audio>
     <img src="img/imagen multijugador.jpg" class="bg-full" alt="multiplayer">
 
     <div class="multibox">
@@ -153,8 +152,30 @@
       <h2>Multijugador</h2>
       <p>Selecciona un modo:</p>
 
+
+      <h3>Jugadores</h3>
+      <select id="playerCount">
+        <option value="1">1 Jugador</option>
+        <option value="2">2 Jugadores</option>
+      </select>
+
+      
+
+      <h3>Nivel</h3>
+
+      <div class="level-select-multi">
+        <button class="mpLevelBtn btn small" data-level="1">Nivel 1</button>
+        <button class="mpLevelBtn btn small" data-level="2">Nivel 2</button>
+        <button class="mpLevelBtn btn small" data-level="3">Nivel 3</button>
+        <button class="mpLevelBtn btn small" data-level="4">Nivel 4</button>
+        <button class="mpLevelBtn btn small" data-level="5">Nivel 5</button>
+      </div>
+
+      <input type="hidden" id="mpSelectedLevel" value="1">
+
+
+
       <div class="multi-buttons">
-        <button id="btnMultiLocal" class="btn big red">2 Jugadores </button>
         <button id="btnMultiOnline" class="btn big alt">Online (próximamente)</button>
       </div>
 
@@ -163,7 +184,7 @@
       <input type="text" id="p2Name" placeholder="Nombre Jugador 2">
 
       <button id="btnStartLocal" class="btn big">Iniciar Partida</button>
-      
+
       <div class="back-row">
         <button class="btn alt" id="backFromMulti">Volver</button>
       </div>
@@ -172,32 +193,39 @@
   </div>
 </section>
 
- <!-- PANTALLA 10 - JUEGO memorizer -->
-  <section id="gameScreen" class="screen" style="display:none;">
-    <div class="game-header">
-      <button id="btnToMenu" class="btn alt">Menu</button>
-      <h2>Juego de Memoria</h2>
-      <div id="score">Pares encontrados: <span id="pairsFound">0</span>/6</div>
-    </div>
+<!-- PANTALLA 10 - JUEGO memorizer -->
+<section id="gameScreen" class="screen" style="display:none;">
+  <div class="game-header">
+    <button id="btnToMenu" class="btn alt">Menu</button>
+    <h2>Juego de Memoria</h2>
+    <div id="score">Pares encontrados: <span id="pairsFound">0</span>/<span id="pairsTotal">6</span></div>
+  </div>
+  <p class="info-line">Tiempo: <span id="timeLeft">0</span>s</p>
+  <p class="info-line">Turno: <span id="TurnCounter">1</span></p>
+  <p class="info-line">
+    <span id="nameP1">Jugador 1</span>: <span id="scoreP1">0</span> 
+    | 
+    <span id="nameP2">Jugador 2</span>: <span id="scoreP2">0</span>
+  </p>
 
-    <div class="board" id="board"></div>
+  <div class="board" id="board"></div>
 
-    <div class="game-footer">
-      <button id="resetBtn" class="btn">Reiniciar</button>
-    </div>
-  </section>
-  
+  <div class="game-footer">
+    <button id="resetBtn" class="btn">Reiniciar</button>
+  </div>
+</section>
 
-  <!-- VICTORY SCREEN (se muestra cuando se completan pares) -->
-  <section id="victoryScreen" class="screen" style="display:none;">
-    <div class="panel victory-panel">
-      <img src="img/imagen felicidades.jpg" class="bg-full" alt="victoria">
-      <h2>¡Ganaste!</h2>
-      <p>Has encontrado todas las parejas.</p>
-      <button id="btnVictoryContinue" class="btn">Continuar</button>
-    </div>
-  </section>
+<!-- PANTALLA DE VICTORIA -->
+<section id="victoryScreen" class="screen" style="display:none;">
+  <div class="panel victory-panel">
+    <img src="img/Imagen felicidades.jpg" class="bg-full" alt="victoria">
+    <h2 id="victoryTitle">¡Ganaste!</h2>
+    <p id="victoryMessage">Has encontrado todas las parejas.</p>
+    <button id="btnVictoryContinue" class="btn">Continuar</button>
+  </div>
+</section>
 
-  <script src="js/script.js"></script>
+
+<script src="js/script.js"></script>
 </body>
 </html>

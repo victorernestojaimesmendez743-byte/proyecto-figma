@@ -304,6 +304,13 @@ html,body { height:100%;
    justify-items:center; 
   }
 
+/* */
+.info-line {
+  margin-bottom: 15px;   /* separa cada línea */
+  font-size: 18px;
+  font-weight: bold;
+}
+
 /* CARD BASE - flip 3D setup */
 .card {
   width: 85px;
